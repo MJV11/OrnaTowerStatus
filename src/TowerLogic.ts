@@ -11,6 +11,7 @@
 	If a 50 floor tower would grow, it becomes 16 floors.
 	--
 	Credit @Knight411
+  Credit @69au for the initial tower logic 
 */
 
 export type TowerKind = 'selene' | 'eos' | 'oceanus' | 'themis' | 'prometheus'
