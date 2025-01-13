@@ -77,7 +77,7 @@ export function getTowerFloors(time: Date): Floors {
   if (hour > 14) {
     point = point + 2
   }
-  if (hour == 15 && minute <= 35) {
+  if (hour === 15 && minute <= 35) {
     point--
   }
   if (hour > 19) {
@@ -89,7 +89,7 @@ export function getTowerFloors(time: Date): Floors {
     return {
       kind: elem,
       floor:
-        towerFloor >= 48 || (towerFloor == 15 && !(day % 35 == 0 && hour == 0)) ? 50 : towerFloor
+        towerFloor >= 48 || (towerFloor === 15 && !(day % 35 === 0 && hour === 0)) ? 50 : towerFloor
     } as Floor
   })
 }
@@ -132,7 +132,7 @@ export function getTowerFloorsInNextDays(time: Date, n: number = 2) {
   if (hour > 14) {
     point = point + 2
   }
-  if (hour == 15 && minute <= 35) {
+  if (hour === 15 && minute <= 35) {
     point--
   }
   if (hour > 19) {
@@ -146,7 +146,7 @@ export function getTowerFloorsInNextDays(time: Date, n: number = 2) {
   return Array.from(days)
     .map((timeTuple: [number, number], index: number) => {
       const dayDelta = Math.floor((index + point) / 7)
-      if (timeTuple[0] == 0 && (35 - (day + dayDelta)) % 35 != 0) {
+      if (timeTuple[0] === 0 && (35 - (day + dayDelta)) % 35 !== 0) {
         return false
       }
       const dayOne = new Date(time)
@@ -159,7 +159,7 @@ export function getTowerFloorsInNextDays(time: Date, n: number = 2) {
         floors: getTowerFloors(dayOne)
       } as CheckPointFloors
     })
-    .filter((e) => e != false)
+    .filter((e) => e !== false)
 }
 
 

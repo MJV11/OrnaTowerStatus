@@ -1,5 +1,4 @@
 import React from 'react';
-import { Floor } from './TowerLogic'; // Adjust the import path
 import { EnhancedFloor } from './TowerLogic';
 
 interface TowerProps {
@@ -8,13 +7,10 @@ interface TowerProps {
 
 const Tower: React.FC<TowerProps> = ({ tower }) => {  
   let towerShards = 0.0;
-  let towerShardsSkipTen = 0.0;
-  let towerShardsSkipTwen = 0.0;
-  let towerShardsSkipThirt = 0.0;
-  let towerShardsSkipFourt = 0.0;
+
   for (let i = 0; i <= tower.floor; i++) {
     let shardsOnFloori = 0;
-    if (i == tower.floor) {
+    if (i === tower.floor) {
       shardsOnFloori = i * 10;
     } else {
       shardsOnFloori = 2.5 * i * 10;
