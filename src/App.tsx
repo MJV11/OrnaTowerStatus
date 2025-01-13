@@ -1,8 +1,4 @@
 import React from 'react';
-import logo from './logo.svg';
-// <header className="App-header">
-//   <img src={logo} className="App-logo" alt="logo" />
-
 
 import TowerList from './TowerList';
 import './App.css';
